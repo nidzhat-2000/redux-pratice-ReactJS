@@ -5,12 +5,17 @@ import { connect, useSelector } from 'react-redux';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { routes } from './stores/routes';
 
-const mapStateToProps = state => ({
-  dark: state.webSet.dark,
-  user: state.auth.user,
-});
+// const mapStateToProps = state => ({
+//   dark: state.webSet.dark,
+//   user: state.auth.user,
+// });
+
+const mapStateToProps = state => {
+  return { dark: state.webSet.dark, user: state.auth.user };
+};
 
 function App({ dark, user }) {
+  // function App() {
   // const { dark } = useSelector(state => state.webSet);
   // const { user } = useSelector(state => state.auth);
 
@@ -45,4 +50,5 @@ function App({ dark, user }) {
   );
 }
 
+// export default App;
 export default connect(mapStateToProps)(App);
