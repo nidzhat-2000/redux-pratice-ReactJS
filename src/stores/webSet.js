@@ -4,7 +4,7 @@ export const webSets = createSlice({
   name: 'web',
   initialState: {
     dark: false,
-    lang: 'tr',
+    lang: localStorage.getItem('webSet') ?? 'tr',
   },
   reducers: {
     setMode: state => {

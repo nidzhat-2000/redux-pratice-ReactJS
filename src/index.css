@@ -16,6 +16,11 @@ body {
   margin-left: 10px;
 }
 
+a {
+  text-decoration: none;
+  color: rgb(14, 116, 110);
+}
+
 .active {
   background-color: brown;
 }
@@ -29,3 +34,11 @@ body {
   background-color: black;
   color: white;
 }
+
+/* .flex {
+  display: block;
+}
+
+.mar {
+  margin-right: 10px;
+} */

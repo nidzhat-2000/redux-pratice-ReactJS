@@ -1,10 +1,14 @@
 import React from 'react';
 import { setLanguage, setMode } from '../stores/webSet';
 import { useDispatch, useSelector } from 'react-redux';
+import { logOut } from '../stores/auth';
 
 function Footer() {
   const { dark, lang } = useSelector(state => state.webSet);
-  console.log(dark, lang);
+  // console.log(dark, lang);
+
+  const { user } = useSelector(state => state.auth);
+  // console.log(user);
 
   const dispatch = useDispatch();
 
@@ -16,7 +20,7 @@ function Footer() {
 
   return (
     <div>
-      <h2> Footer</h2>
+      <h2> Site Settings </h2>
 
       <div className="lang">
         {optionsLang.map((langOpt, i) => {
@@ -36,7 +40,11 @@ function Footer() {
           {dark ? 'light' : 'dark'}
         </button>
       </div>
-    </div>
+
+      <div>
+        {user && <button onClick={() => dispatch(logOut())}>Log Out</button>}
+      </div>
+    </div> 
   );
 }
 
